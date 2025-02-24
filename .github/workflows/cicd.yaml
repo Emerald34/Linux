@@ -9,6 +9,20 @@ jobs:
           python-version: '3.13'
       - run: pip install flask pytest
       - run: pytest
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.2.1
+        with:
+          host: ${{ secrets.secret_ip }}
+          username: yc-user
+          key: ${{ secrets.secret_key }}
+          script: |
+            sudo apt-get update
+            cd /home/yc-user/test_cicd
+            docker compose down
+            docker compose up
   build:
     runs-on: ubuntu-latest
     permissions:
