@@ -26,6 +26,7 @@ jobs:
             docker compose down
             docker compose up -d
   build:
+    needs: testing
     runs-on: ubuntu-latest
     permissions:
       contents: read
