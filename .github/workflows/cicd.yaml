@@ -19,6 +19,7 @@ jobs:
           host: ${{ secrets.secret_ip }}
           username: yc-user
           key: ${{ secrets.secret_key }}
+          passphrase: 123
           script: |
             sudo apt-get update
             cd /home/yc-user/test_cicd
