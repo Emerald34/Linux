@@ -21,7 +21,7 @@ jobs:
           key: ${{ secrets.secret_key }}
           passphrase: 123
           script: |
-            sudo apt-get update
+            docker pull ghcr.io/emerald34/linux:main
             cd /home/yc-user/test_cicd
             docker compose down
             docker compose up
