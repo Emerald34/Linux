@@ -24,7 +24,7 @@ jobs:
             docker pull ghcr.io/emerald34/linux:main
             cd /home/yc-user/test_cicd
             docker compose down
-            docker compose up
+            docker compose up -d
   build:
     runs-on: ubuntu-latest
     permissions:
